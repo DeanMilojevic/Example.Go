@@ -3,16 +3,13 @@ package middleware
 import (
 	"net/http"
 	"encoding/json"
+	"go_example/internal/example/models"
 )
-
-type Response struct {
-	Message string `json:"message"`
-}
 
 func Get(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("ContentType", "application/json")
 
-	response := Response {
+	response := models.Response {
 		Message: "test message",
 	}
 
